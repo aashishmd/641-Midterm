@@ -1,0 +1,399 @@
+% $Id: macros.tex,v 1.4 2013/08/18 16:00:29 ganeshau Exp $
+%\usepackage[pdftex]{hyperref}
+\frenchspacing
+\usepackage{mathptmx}
+
+%\usepackage{cite}
+\usepackage[T1]{fontenc}
+\usepackage{times}
+\usepackage{url}
+%\usepackage{cite}
+\usepackage{amsmath}
+% \usepackage{fancyhdr}
+%\usepackage{fancyvrb}
+%\usepackage{fancybox}
+\usepackage{color}
+\usepackage{colortbl}
+\usepackage{mathpartir}
+\usepackage{amssymb}
+\usepackage{xspace}
+\usepackage{comment}
+\usepackage{graphicx}
+\graphicspath{{figures/}}
+%\usepackage{epsfig}
+%\usepackage{wrapfig}
+\usepackage{multirow}
+%\usepackage{subfig}
+
+% Added listing for code listings
+\usepackage{listings}
+\usepackage{relsize}
+%\usepackage{stfloats}
+\usepackage{fixltx2e}
+\usepackage{courier}
+% formatting for grammars
+% \input{obey}
+% \input{grammar}
+
+\usepackage{soul}
+\newcommand{\hlc}[2][yellow]{ {\sethlcolor{#1} \hl{#2}} }
+
+%\renewcommand{\nonterm}[1]{\mbox{\textit{#1}}}
+\newcommand{\oneormore}[1]{#1\ensuremath{^+}}
+
+% % %\newcommand{\panini}{\textsf{java}$_c$\xspace}
+% \newcommand{\mechanism}{active module\xspace}
+% \newcommand{\Mechanism}{Active module\xspace}
+% \newcommand{\MEchanism}{Active Module\xspace}
+% \newcommand{\mechanisms}{active modules\xspace}
+% \newcommand{\Mechanisms}{Active modules\xspace}
+% \newcommand{\MEchanisms}{Active Modules\xspace}
+%\newcommand{\intermechanism}{inter-modular\xspace}
+%\newcommand{\intramechanism}{intra-modular\xspace}
+
+\newcommand{\mechanism}{capsule\xspace}
+\newcommand{\Mechanism}{Capsule\xspace}
+\newcommand{\MEchanism}{Calsupe\xspace}
+\newcommand{\mechanisms}{capsules\xspace}
+\newcommand{\Mechanisms}{Capsules\xspace}
+\newcommand{\MEchanisms}{Capsules\xspace}
+\newcommand{\intermechanism}{inter-capsular\xspace}
+\newcommand{\intramechanism}{intra-capsular\xspace}
+
+\newcommand{\MRB}{Message Ring Buffer\xspace}
+\newcommand{\mrb}{message ring buffer\xspace}
+\newcommand{\TaskFramework}{task framework\xspace}
+
+% Type checking macros
+% change symbol type of : from mathrel 
+%\DeclareMathSymbol{:}{\mathbin}{operators}{"3A} 
+\newcommand{\OK}{\mbox{OK}}
+\newcommand{\OKin}{\mbox{OK in }}
+\newcommand{\inC}{\mbox{in }c}
+\newcommand{\isType}{\mbox{\textit{isType}}}
+\newcommand{\validFields}{\mbox{\textit{validF}}}
+\newcommand{\isClass}{\mbox{\textit{isClass}}}
+\newcommand{\isHandler}{\mbox{\textit{isHandler}}}
+\newcommand{\Types}{\mbox{\textit{Types}}}
+\newcommand{\Names}{\mbox{\textit{Names}}}
+\newcommand{\TypeEnv}{\mbox{\textit{TypeEnv}}}
+\newcommand*{\findMeth}{\auxFunc{findMeth}}
+\newcommand*{\fieldsOf}{\auxFunc{fields}}
+\newcommand*{\fieldName}{\auxFunc{fieldName}}
+\newcommand*{\checkMethods}{\auxFunc{methE}}
+\newcommand*{\methodEffect}{\auxFunc{me}}
+\newcommand*{\typeOfField}{\auxFunc{typeOfF}}
+\newcommand*{\typeOf}{\auxFunc{typeOf}}
+\newcommand*{\dom}{\auxFunc{dom}}
+\newcommand*{\rng}{\auxFunc{rng}}
+\newcommand*{\isAnn}{\auxFunc{annotated}}
+\newcommand*{\updateEffect}{\auxFunc{update}}
+\newcommand*{\reversePointer}{\auxFunc{reverse}}
+\newcommand*{\reversePoint}{\auxFunc{reverseP}}
+\newcommand*{\fixPoint}{\auxFunc{fixPoint}}
+\newcommand*{\updateOther}{\auxFunc{updateOther}}
+\newcommand*{\updateMethodEffect}{\auxFunc{updateEff}}
+\newcommand*{\updateSingleMethodEffect}{\auxFunc{updateMeth}}
+\newcommand*{\updateSingleEffect}{\auxFunc{concretize}}
+\newcommand*{\updateForkEffect}{\auxFunc{updateFork}}
+\newcommand*{\updateQueue}{\auxFunc{updateQ}}
+\newcommand*{\getActive}{\auxFunc{active}\xspace}
+\newcommand*{\field}{\auxFunc{field}}
+\newcommand{\fdecl}{\mbox{\textit{fdecl}}}
+\newcommand*{\fieldOf}{\auxFunc{fieldOf}}
+\newcommand*{\getOpen}{\auxFunc{getOpen}}
+\newcommand{\NPE}{\mbox{\textit{NPE}}}
+
+% Reserved words (in math mode)
+\newcommand{\Extends}{\mbox{\texttt{\textbf{extends}}}}
+\newcommand{\Implements}{\mbox{\texttt{\textbf{implements}}}}
+\newcommand{\This}{\mbox{\texttt{\textbf{this}}}}
+\newcommand{\Self}{\mbox{\texttt{\textbf{self}}}}
+\newcommand{\EV}{\mbox{\texttt{\textbf{event}}~}}
+\newcommand{\Cast}{\mbox{\texttt{\textbf{cast}}}}
+\newcommand{\New}{\mbox{\texttt{\textbf{new}}~}}
+\newcommand{\Null}{\mbox{\texttt{\textbf{null}}}}
+\newcommand{\Chain}{\mbox{\texttt{\textbf{chain}}~}}
+\newcommand{\Under}{\mbox{\texttt{\textbf{under}}~}}
+\newcommand{\If}{\mbox{\texttt{\textbf{if}}}}
+\newcommand{\Then}{\mbox{\texttt{\textbf{then}}}}
+\newcommand{\Else}{\mbox{\texttt{\textbf{else}}}}
+\newcommand{\While}{\mbox{\texttt{\textbf{while}}}}
+
+% Aux functions
+\newcommand{\auxFunc}[1]{\ensuremath{\mathop{\mathit{#1}}}}
+\newcommand*{\override}{\auxFunc{override}}
+
+% types
+\newcommand{\POWERSET}[1]{\mbox{\textit{PowerSet}}(#1)}
+\newcommand{\delete}{\mbox{\textit{delete}}}
+\newcommand{\mklist}{\mbox{\textit{mksupers}}}
+\newcommand{\uminus}{\mbox{$\cup\!\!\!\!-$}}
+\newcommand{\iminus}{\mbox{$\cap\!\!\!\!-$}}
+\newcommand{\commutesWith}{\sharp}
+\newcommand{\notCommutesWith}{\not\sharp}
+\newcommand{\rname}[1]{$\TirName{(#1)}$} % for inline inferrule names
+\newcommand{\STO}{\ensuremath{<:}}  % ``subtype of''
+\newcommand{\notSTO}{\ensuremath{\not<:}}  % ``subtype of''
+\newcommand{\consistent}{\ensuremath{\approx}}
+
+% auxiliary funtions for finding the dynamic effects for program executions.
+\newcommand*{\dynamicInfinite}{\auxFunc{dynValue}}
+\newcommand*{\dynamicEffects}{\auxFunc{dynE}}
+\newcommand*{\dynamicEffectsOnce}{\auxFunc{dyn}}
+\newcommand*{\dynamicEffectSet}{\auxFunc{dynESet}}
+\newcommand*{\predecessorSiblings}{\auxFunc{preS}}
+\newcommand*{\predSibles}{\auxFunc{pSib}}
+%\newcommand*{\offspring}{\auxFunc{descendentsOf}}
+%\newcommand*{\offspring}{\auxFunc{descendents}}
+\newcommand*{\offspring}{\auxFunc{desc}}
+\newcommand*{\offspringOrItself}{\auxFunc{descendOrSelf}} 
+\newcommand*{\inQueueX}{\auxFunc{inQ}} 
+\newcommand*{\inQueueY}{\auxFunc{inq}}
+\newcommand*{\replaceQueue}{\auxFunc{replace}}
+\newcommand*{\substituteSequence}{\auxFunc{subSeq}}
+\newcommand*{\combineSequence}{\auxFunc{comSeq}}
+\newcommand*{\mergeSequence}{\auxFunc{merSeq}}
+\newcommand*{\isin}{\auxFunc{belongs}}
+\newcommand*{\configuration}{c}
+
+% Macros for operational semantics
+\newcommand{\mc}[1]{\mbox{\rm \ensuremath{\text{\code{#1}}}}} % Arg set in code font in math
+\newcommand{\loc}{\ensuremath{\mathord{\mathit{loc}}}}
+\newcommand{\handler}[3]{\ensuremath{\langle#1,#2,#3\rangle}}
+\newcommand{\ec}{\ensuremath{\mathbb{E}}}
+%\newcommand{\ec}{\ensuremath{\mathop{\mathbb{E}}}}
+%\newcommand{\ecpending}{\ensuremath{\mathop{\mathbb{E'}}}}
+\newcommand{\ecpending}{\ensuremath{\mathop{\overline{\mathbb{E}}}}}
+\newcommand{\hole}{\ensuremath{\mathord{\mathit{-}}}}
+\newcommand{\reducesto}{\hookrightarrow}
+\newcommand{\reducestostar}{\overset{*}{\reducesto}}
+\newcommand{\dontcare}{\ensuremath{\mathord{\text{\textvisiblespace\hspace{0.10ex}}}}}
+\newcommand{\Expression}{\ensuremath{{\cal E}}}
+\newcommand{\Stack}{\mbox{\textit{Stack}}}
+\newcommand{\Store}{\mbox{\textit{Store}}}
+\newcommand{\ActiveList}{\mbox{\textit{ActiveList}}}
+\newcommand{\Frame}{\mbox{\textit{Frame}}}
+\newcommand{\FieldEnv}{\mbox{\textit{FieldEnv}}}
+\newcommand{\ObjectRecord}{\mbox{\textit{ObjectRecord}}}
+\newcommand{\lexframe}{\mbox{\textbf{\texttt{frame}}}}
+\newcommand{\handlerframe}{\mbox{\textbf{\texttt{hframe}}}}
+\newcommand{\Excep}{\mbox{\textit{Excep}}}
+
+\newcommand*{\seq}[1]{\ensuremath{\left\langle {#1} \right\rangle}} % Arg is sequence contents
+\newcommand{\config}{\seq}
+\newcommand{\udot}{\mathbin{\sqcup \kern-0.53em \cdot \,}}
+
+\newcommand{\eseq}{\hat{e}}
+
+% Effect attributes
+\newcommand{\ReadE}{\mbox{\texttt{\textbf{read}}~}}
+%\newcommand{\WriteE}{\mbox{\texttt{\textbf{write}}~}}
+\newcommand{\WriteE}{\mbox{\texttt{\textbf{write}}~}}
+\newcommand{\CheckE}{\mbox{\texttt{\textbf{open}}}}
+%\newcommand{\ForkE}{\mbox{\texttt{\textbf{fork}}}}
+\newcommand{\ForkE}{\mbox{\texttt{\textbf{fork}}}}
+\newcommand{\EnqueueE}{\mbox{\texttt{\textbf{bottom}}}}
+%\newcommand{\BottomE}{\mbox{\texttt{\textbf{\bot}}}}
+\newcommand{\RegisterE}{\mbox{\texttt{\textbf{exp}}}}
+%\newcommand{\AnnounceE}{\mbox{\texttt{\textbf{frk}}~}}
+\newcommand{\CreateE}{\mbox{\texttt{\textbf{create}}~}}
+% Effect Auxiliary Functions
+\newcommand*{\EffectsOf}{\auxFunc{effects}}
+\newcommand{\ReadF}{\mbox{\texttt{\textbf{rd}}}}
+\newcommand{\WriteF}{\mbox{\texttt{\textbf{wt}}}}
+\newcommand{\ForkF}{\mbox{\texttt{\textbf{fk}}}}
+\newcommand{\EnqueueF}{\mbox{\texttt{\textbf{eq}}}}
+\newcommand{\BottomF}{\mbox{\texttt{\textbf{bt}}}}
+\newcommand{\ConcretizedF}{\mbox{\texttt{\textbf{ct}}}}
+\newcommand{\OtherF}{\mbox{\texttt{\textbf{el}}}}
+
+
+\newcommand{\Class}{\mbox{\texttt{\textbf{class}}~}}
+\newcommand{\tasks}{\mbox{\texttt{\textbf{tasks}}~}}
+\newcommand{\fork}{\mbox{\texttt{\textbf{fork}}~}}
+\newcommand{\foreach}{\mbox{\texttt{\textbf{forall}}~}}
+\newcommand{\Decl}{\mbox{\texttt{\textbf{decl}}~}}
+\newcommand{\RDecl}{\mbox{\texttt{\textbf{rdecl}}~}}
+\newcommand{\Exp}{\mbox{\texttt{\textbf{exp}}~}}
+\newcommand{\Prog}{\mbox{\texttt{\textbf{prog}}~}}
+\newcommand{\Meth}{\mbox{\texttt{\textbf{meth}}~}}
+\newcommand{\Type}{\mbox{\texttt{\textbf{type}}}}
+\newcommand{\var}{\mbox{\textit{var}}}
+\newcommand{\Nil}{\ensuremath{\bullet}}
+%\newcommand{\st}{\ensuremath{\textrm{s.t.}}}
+\newcommand{\true}{\ensuremath{\mathit{true}}}
+\newcommand{\false}{\ensuremath{\mathit{false}}}
+\newcommand{\Land}{\ensuremath{\bigwedge}}
+
+% New Panini features
+\newcommand{\Announce}{\mbox{\texttt{\textbf{announce}}~}}
+\newcommand{\Yield}{\mbox{\texttt{\textbf{yield}}~}}
+%\newcommand{\Future}{\mbox{\texttt{\textbf{Future}}~}}
+
+\newcommand{\When}{\mbox{\texttt{\textbf{when}}}}
+\newcommand{\Do}{\mbox{\texttt{\textbf{do}}}}
+\newcommand{\Return}{\mbox{\texttt{\textbf{return}}}}
+\newcommand{\Invoke}{\mbox{\texttt{\textbf{invoke}}}}
+\newcommand{\Thunk}{\mbox{\texttt{\textbf{thunk}}~}}
+\newcommand{\Register}{\mbox{\texttt{\textbf{register}}}}
+\newcommand{\EventClosure}{\mbox{\texttt{\textbf{eClosure}}}}
+\newcommand{\Boolean}{\mbox{\texttt{\textbf{boolean}}}}
+\newcommand{\Int}{\mbox{\texttt{\textbf{int}}}}
+\newcommand{\Void}{\mbox{\texttt{\textbf{void}}}}
+\newcommand{\Nat}{\mbox{\texttt{\textbf{Nat}}}}
+
+% auxiliary funtions for updating the event hierarchies
+%\newcommand*{\updateGamma}{\auxFunc{updateHierarchy}}
+\newcommand*{\updateGamma}{\auxFunc{updateHier}}
+\newcommand*{\inGamma}{\auxFunc{registered}}
+\newcommand*{\inDelta}{\auxFunc{inHierarchy}}
+\newcommand*{\inZeta}{\auxFunc{inList}}
+%\newcommand*{\updateEffect}{\auxFunc{updateEffect}}
+\newcommand*{\collectBindings}{\auxFunc{colEvts}}
+\newcommand*{\collectEvents}{\auxFunc{colEvt}}
+\newcommand*{\putEvent}{\auxFunc{putEvent}}
+\newcommand*{\putHierarchies}{\auxFunc{putHierarchies}}
+\newcommand*{\putLevel}{\auxFunc{putLevel}}
+\newcommand*{\effectsHierachy}{\auxFunc{effHier}}
+\newcommand*{\effectsList}{\auxFunc{effList}}
+\newcommand*{\effectsUnion}{\auxFunc{effUn}}
+\newcommand*{\mergeRho}{\auxFunc{mergeRho}}
+\newcommand*{\mergeEpsilon}{\auxFunc{mergeEff}}
+\newcommand*{\effectEnlarge}{\auxFunc{effectEnlarge}}
+\newcommand*{\insertLast}{\auxFunc{insert}}
+\newcommand*{\compareLast}{\auxFunc{comp}}
+\newcommand*{\build}{\auxFunc{build}}
+\newcommand*{\isConcurrent}{\auxFunc{parallel}}
+\newcommand*{\conflict}{\auxFunc{disjointMeth}}
+\newcommand*{\disjoint}{\auxFunc{disj}}
+\newcommand*{\interfere}{\auxFunc{nonConfl}}
+\newcommand*{\deepCopy}{\auxFunc{copy}}
+\newcommand*{\findMax}{\auxFunc{fresh}}
+\newcommand*{\forkTask}{\auxFunc{buildconfs}}
+\newcommand*{\intersect}{\auxFunc{intersect}}
+\newcommand*{\inQueue}{\auxFunc{inQueue}}
+\newcommand*{\copyEffect}{\auxFunc{cp}}
+\newcommand*{\getTask}{\auxFunc{getTask}}
+\newcommand*{\getFirstTask}{\auxFunc{getfirst}}
+
+\definecolor{Brown}{cmyk}{0,0.81,1,0.60}
+\definecolor{OliveGreen}{cmyk}{0.64,0,0.95,0.40}
+\definecolor{CadetBlue}{cmyk}{0.62,0.57,0.23,0}
+\definecolor{lightlightgray}{gray}{0.9}
+
+\definecolor{lightest-gray}{rgb}{0.95,0.95,0.5}
+\definecolor{lighter-gray}{rgb}{0.7,0.98,0.7}
+\definecolor{light-gray}{rgb}{0.5,0.98,0.98}
+%\definecolor{light-gray}{rgb}{0.0,0.75,0.80}
+\definecolor{dark-gray}{rgb}{0.95,0.7,0.95}
+\definecolor{darker-gray}{rgb}{1,0.65,0.65}
+
+% settings for listings
+\definecolor{white}{gray}{1.0}
+\definecolor{lightergray}{gray}{0.99}
+\definecolor{lightgray}{gray}{0.97}
+\definecolor{darkgray}{gray}{0.5}
+\definecolor{OliveGreen}{cmyk}{0.64,0,0.95,0.40}
+
+\lstset{
+	language={[Visual]Basic}, emph={},
+	mathescape=false, escapechar=@,
+	backgroundcolor=\color{lightgray},
+	commentstyle=\color{darkgray},
+	keywordstyle=\color{OliveGreen}\bfseries,
+	basicstyle=\scriptsize\sffamily,
+	numberstyle=\scriptsize\sffamily,
+	emphstyle=\bfseries,
+	numbers=left, stepnumber=1,
+	numberblanklines=false,
+	numberstyle=\tiny,
+	numbersep=-3pt,
+	frame=none, framexleftmargin=0pt, framexrightmargin=0pt, 
+	%xleftmargin=15pt, xrightmargin=4pt,
+	columns=flexible, breaklines=true,
+	showspaces=false, showstringspaces=false, showtabs=false, tabsize=2,
+	morekeywords={abstract,case,catch,class,def,do,else,extends,%
+          false,final,finally,for,forSome,if,implicit,import,lazy,%
+          match,new,null,object,override,package,private,protected,%
+          return,sealed,super,this,throw,trait,true,try,type,%
+          val,var,while,with,yield,
+          map,filter,flatmap,sample,groupByKey,reduceByKey,
+          union,join,cogroup,crossProduct,mapValues,sort,partitionBy,
+          count,collect,reduce,lookup,save},
+	otherkeywords={=>,<-,<\%,<:,>:,\#,@}
+}
+
+% could use \relsize{-2} instead of \scriptsize below
+\newcommand{\FIGCODEFONT}{\relsize{-1}\ttfamily}
+\newcommand{\FIGCODELIBFONT}{\relsize{-6}\ttfamily}
+
+% cross referencing
+\newcommand{\figref}[1]{Figure~\ref{#1}}
+\newcommand{\tabref}[1]{Table~\ref{#1}}
+\newcommand{\fignref}[1]{Figure~\ref{#1}}
+\newcommand{\appref}[1]{Appendix~\ref{#1}}
+\newcommand{\secref}[1]{\S\ref{#1}}
+\newcommand{\secnref}[1]{\S\ref{#1}}
+\newcommand{\defref}[1]{Definition~\ref{#1}}
+\newcommand{\lemref}[1]{Lemma~\ref{#1}}
+\newcommand{\theref}[1]{Theorem~\ref{#1}}
+\newcommand{\lineref}[1]{line~\ref{#1}}
+\newcommand{\linesref}[2]{lines~\ref{#1}-\ref{#2}}
+\newcommand{\linerefNum}[1]{\ref{#1}}
+\newcommand{\footnoteref}[1]{$^{\ref{#1}}$}
+
+%  % {theorems}
+%  \newtheorem{theorem}{Theorem}[section]
+%  \newtheorem{axiom}[theorem]{Axiom}
+%  \newtheorem{corollary}[theorem]{Corollary}
+%  \newtheorem{definition}[theorem]{Definition}
+%  \newtheorem{example}[theorem]{Example}
+%  \newtheorem{fact}[theorem]{Fact}
+%  \newtheorem{lemma}[theorem]{Lemma}
+%  \newtheorem{proposition}[theorem]{Proposition}
+%  \newtheorem{remark}[theorem]{Remark}
+%  \newtheorem{conjecture}[theorem]{Conjecture}
+
+%Some helpful notation
+\newcommand{\PROOF}{{\em Proof:\/}~~}
+
+\newcommand{\etal}{~\textit{et al.}}
+
+%\newcommand{\PROOFSKETCH}{{\em Proof Sketch:\/}~~}
+\newcommand{\PROOFSKETCH}{{\em Proof:\/}~~}
+%\newcommand{\QED}{\rule{0.4em}{0.65em}}
+
+\newcommand\para[1]{\vspace{0.1em}{\bf #1.}\ }
+%\newcommand\para[1]{\paragraph{#1}}
+
+% formatting of initial section quotations
+\newcommand{\QUOTATION}[1]{\begin{scriptsize}\begin{flushright}\emph{#1}\end{flushright}\end{scriptsize}}
+
+% \newtheorem{theorem}{{\bf Theorem}}[section]
+% \newenvironment{definition}[1][Definition]{\begin{trivlist}
+% \item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+% 
+% \newenvironment{lemma}[1][Lemma]{\begin{trivlist}
+% \item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+% 
+% \newenvironment{example}[1][Example]{\begin{trivlist}
+% \item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+% 
+% \newenvironment{remark}[1][Remark]{\begin{trivlist}
+% \item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+
+% \newcommand{\qed}{\nobreak \ifvmode \relax \else
+%       \ifdim\lastskip<1.5em \hskip-\lastskip
+%       \hskip1.5em plus0em minus0.5em \fi \nobreak
+%       \vrule height0.75em width0.5em depth0.25em\fi}
+
+% Allow figures to take up the entire page
+\renewcommand\floatpagefraction{.99}
+\renewcommand\topfraction{.99}
+\renewcommand\bottomfraction{.90}
+\renewcommand\textfraction{.01}
+
+% \renewcommand{\topfraction}{0.90}
+% \renewcommand{\textfraction}{0.05}
+% \renewcommand{\floatpagefraction}{0.85}
