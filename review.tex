@@ -1,28 +1,47 @@
-\section{Problem}
+\section{Background}
+\subsection{Background}
 \begin{frame}{Problem}
   \begin{itemize}
-    \item Efficient processing of large scale graphs is a challenge
+    \item Many practical computing problems concern large scale graphs
+    \item Efficient processing of such large scale graphs is a challenge
     \item  There are different frameworks e.g. Pregel, Giraph, GraphX, Mizan, GraphLab, GPS, PowerGraph, etc. that have been developed for this purpose
   \end{itemize}
   \end{frame}
 
-  \begin{frame}{Review}
+  \begin{frame}{Problem}
     \begin{itemize}
-    \item Combination of Vertex-centric and Global computations is used by some graph algorithms
-    \item Frameworks provide algorithms for graph mutation operations
+    \item There are graph based algorithms that can be performed in a fully vertex-centric and hence parallel fashion (e.g. shortest path, pagerank etc.)
+    \item However, some graph algorithms are a combination of vertex-centric (parallel) and global (sequential) computations (e.g. k-clustering, affinity propagation etc.)
+    \item Some of the frameworks dedicated for processing graphs also facilitate graph mutation operations
         \begin{itemize}
-          \item Pregel, Mizan, Giraph, GPS, GraphLab.
+          \item e.g. Pregel, Mizan, Giraph, GPS, GraphLab.
         \end{itemize}
       \end{itemize}
     \end{frame}
 
-    \begin{frame}{Review}
+\subsection{Context}
+    \begin{frame}{Problem}
     \begin{itemize}
-      \item Concurrent operations of topology mutation in different vertices may lead to conflicts
-      \item The frameworks try to solve the mutual conflicts using:
-          \begin{itemize}
-            \item Partial Ordering: edge remove $\rightarrow$ vertex remove $\rightarrow$ vertex add $\rightarrow$ edge add
-            \item User defined Handlers
-          \end{itemize}
-  \end{itemize}
+    \item Topology mutation of graph introduces concurrent graph mutation conflicts
+    \newline
+     \item Multiple vertices may issue conflicting requests in the same superstep
+     	\begin{itemize}
+		\item e.g., two requests to add a vertex V , with different initial values
+	\end{itemize}
+ \end{itemize}
+\end{frame}
+
+    \begin{frame}{Problem}
+	Current frameworks handle concurrent conflicts through two mechanisms:          			\begin{itemize}
+	            	\item Partial Ordering:
+		    		\begin{itemize}
+					\item Removals are performed first, edge removal before vertex removal
+					\item Addition follows the order, where vertex addition precedes edge addition
+				\end{itemize}
+            \item User defined Handlers:
+            		\begin{itemize}
+					\item Default is randomly allowing choosing one request out of conflicted ones
+					\item Users with special needs may specify other conflict resolution policy
+         		 \end{itemize}
+		 \end{itemize}
 \end{frame}
