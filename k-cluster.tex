@@ -24,14 +24,32 @@
 \begin{frame}{K-Clustering}
   Examples of Conflict in vertex related problems.\\
   1) K-Cluster Algorithm\\
-  $A=(2,1), B=(3,1), C=(3,2), D=(2,3), E=(1,4), F=(4,4)$\\
-  $G=(5,3), H=(5,1)$, where $B, D, E, F, G, H$ are objects
-  and $A$ and $C$ are two clusters.\\
+  A=(2,1), B=(3,1), C=(3,2), D=(2,3),\\
+  E=(1,4), F=(4,4), G=(5,3), H=(5,1)\\ where $B, D, E, F, G, H$ are objects\\
+  $A$ and $C$ are two clusters.\\
+\end{frame}
+
+\begin{frame}{K-clustering}
   Calculating Euclidean distance from each object to both of the clusters:\\
-  $DA$=$\sqrt{{(2-2)}^2+{(3-1)}^2}=2$\\
+  $DA$=$\sqrt{{(2-2)}^2+{(3-1)}^2}=2$,
   $DC$=$\sqrt{{(2-3)}^2+{(3-2)}^2}=\sqrt{2}$\\
   $\therefore DC<DA$\\
-  $BA$ = $\sqrt{{(3-2)}^2+{(1-1)}^2}=1$\\
+  $BA$ = $\sqrt{{(3-2)}^2+{(1-1)}^2}=1$,
   $BC$ = $\sqrt{{(3-3)}^2+{(2-1)}^2}=1$\\
   $\therefore AB=BC$\\
+  $AE$=$\sqrt{{(2-1)}^2+{(1-4)}^2}=\sqrt{10}$,
+  $CE$=$\sqrt{{(3-1)}^2+{(2-4)}^2}=\sqrt{8}$\\
+  $\therefore CE<AE$\\
+\end{frame}
+
+\begin{frame}{K-Clustering}
+  $AF$=$\sqrt{{(4-2)}^2+{(4-1)}^2}=\sqrt{13}$,
+  $CF$=$\sqrt{{(4-3)}^2+{(4-2)}^2}=\sqrt{5}$\\
+  $\therefore CF<AF$\\
+  $AG$=$\sqrt{{(5-2)}^2+{(3-1)}^2}=\sqrt{13}$,
+  $CG$=$\sqrt{{(5-3)}^2+{(3-2)}^2}=\sqrt{5}$\\
+  $\therefore CG<AG$\\
+  $AH$=$\sqrt{{(5-2)}^2+{(1-1)}^2}=3$,
+  $CH$=$\sqrt{{(5-3)}^2+{(1-2)}^2}=\sqrt{5}$\\
+  $\therefore AH<CH$\\
 \end{frame}

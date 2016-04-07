@@ -1,4 +1,29 @@
 \section{Review}
+\subsection{Topology Mutation}
 \begin{frame}{Review}
-  
+  \begin{itemize}
+    \item Scalability of graphs in current world ranges to billions of vertices and trillions of edges which poses a challenge to efficient processing.
+    \item Different Frameworks (like Pregel, Giraph, GraphX, Mizan, GraphLab, GPS, PowerGraph, etc.) have been developed for this purpose.
+  \end{itemize}
+  \end{frame}
+
+  \begin{frame}{Review}
+    \begin{itemize}
+    \item In some cases, graph algorithms require a combination of global (sequential) and vertex-centric (parallel) computations.
+    \item This type of algorithm requires graph mutation operations, which is provided by frameworks:
+        \begin{itemize}
+          \item Pregel, Mizan, Giraph, GPS, GraphLab.
+        \end{itemize}
+      \end{itemize}
+    \end{frame}
+
+    \begin{frame}{Review}
+    \begin{itemize}
+      \item Concurrent operations of topology mutation in different vertices may lead to conflicts.
+      \item The frameworks try to solve the mutual conflicts using:
+          \begin{itemize}
+            \item Partial Ordering: edge remove $\rightarrow$ vertex remove $\rightarrow$ vertex add $\rightarrow$ edge add
+            \item User defined Handlers
+          \end{itemize}
+  \end{itemize}
 \end{frame}
