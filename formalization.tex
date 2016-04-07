@@ -52,26 +52,24 @@ $\frac{v\in V, E' = \{(v_j, v_k)\in E, v_j=v \lor v_k=v\}
 \begin{frame}
 Local semantics:\\
 \begin{itemize}
-  \item The four operations as expressions.
+  \item Extra expressions: four mutation expressions and superstep barrier.
   \item Evaluate the four mutation expressions by pushing it into a global
   expression queue.
 \end{itemize}
+\end{frame}
 
+\begin{frame}
 Global semantics:\\
 \begin{itemize}
   \item Evaluate processes one by one until all processes reach barrier state.
   \item Mutate the global graph using the graph mutation requests using the
   global expression queue and the graph mutation semantics.
+  \item For consistency models, mutation on locked vertices and edges are
+  discarded.
   \item Given a graph and a mutation request queue, the mutation is invalid, if:
   \begin{itemize}
     \item Output is not a well-formed graph
-    \item Output graph does not have the graph properties the
-    provided specification specifies.
+    \item Check against provided specifications does not pass 
   \end{itemize}
 \end{itemize}
-
-
 \end{frame}
-
-
-
