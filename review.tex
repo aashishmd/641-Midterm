@@ -9,7 +9,7 @@
   \begin{frame}{Review}
     \begin{itemize}
     \item Combination of Vertex-centric and Global computations is used by some graph algorithms
-    \item This type of algorithm requires graph mutation operations, which is provided by frameworks:
+    \item Frameworks provide algorithms for graph mutation operations
         \begin{itemize}
           \item Pregel, Mizan, Giraph, GPS, GraphLab.
         \end{itemize}
@@ -18,7 +18,7 @@
 
     \begin{frame}{Review}
     \begin{itemize}
-      \item Concurrent operations of topology mutation in different vertices may lead to conflicts.
+      \item Concurrent operations of topology mutation in different vertices may lead to conflicts
       \item The frameworks try to solve the mutual conflicts using:
           \begin{itemize}
             \item Partial Ordering: edge remove $\rightarrow$ vertex remove $\rightarrow$ vertex add $\rightarrow$ edge add
