@@ -1,0 +1,77 @@
+\section{Formalization}
+\begin{frame}{Semantics}
+\textbf{Definition 1.} A directed graph is a tuple $G = (V, E)$ where V is a
+finite set of vertices, i.e., $V={v_1,\ldots,v_n}$, and E is a finite set of
+directed edges which are ordered pairs of V, i.e.,
+$E={e_{1},\ldots,e_{m}}\subseteq V\times V$, where each $e_{i}=(v_{j},v_{k})$
+for some j, k.
+\end{frame}
+
+\begin{frame}
+Graph mutation semantics:\\
+\begin{large}
+(Edge\_Insertion)\\
+\end{large}
+\hspace{3cm}
+\begin{Large}
+$\frac{v_{j}\in V, v_{k}\in V}{(v_{j},v_{k})i_{e}:G(V,E)\rightarrow (V,E\cup
+\{v_{i},v_{k}\})}$
+\end{Large}
+
+\vspace{5mm}
+
+\begin{large}
+(Edge\_Removal)\\
+\end{large}
+\hspace{3cm}
+\begin{Large}
+$\frac{v_{j}\in V, v_{k}\in V}{(v_{j},v_{k})r_e:G(V,E)\rightarrow
+(V,E\setminus \{v_{i},v_{k}\})}$\\
+\end{Large}
+\vspace{5mm}
+\begin{large}
+(Vertex\_Insertion)\\
+\end{large}
+\hspace{3cm}
+\begin{Large}
+$\frac{v\notin V}{(v)i_v:G(V,E)\rightarrow
+(V\cup v,E\})}$\\
+\end{Large}
+\vspace{5mm}
+\begin{large}
+(Vertex\_Removal)\\
+\end{large}
+\hspace{3cm}
+\begin{Large}
+$\frac{v\in V, E' = \{(v_j, v_k)\in E, v_j=v \lor v_k=v\}
+}{(v)i_r:G(V,E)\rightarrow (V\cup v,E\setminus E' \})}$
+\end{Large}
+
+\end{frame}
+
+\begin{frame}
+Local semantics:\\
+\begin{itemize}
+  \item The four operations as expressions.
+  \item Evaluate the four mutation expressions by pushing it into a global
+  expression queue.
+\end{itemize}
+
+Global semantics:\\
+\begin{itemize}
+  \item Evaluate processes one by one until all processes reach barrier state.
+  \item Mutate the global graph using the graph mutation requests using the
+  global expression queue and the graph mutation semantics.
+  \item Given a graph and a mutation request queue, the mutation is invalid, if:
+  \begin{itemize}
+    \item Output is not a well-formed graph
+    \item Output graph does not have the graph properties the
+    provided specification specifies.
+  \end{itemize}
+\end{itemize}
+
+
+\end{frame}
+
+
+
