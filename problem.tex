@@ -1,0 +1,21 @@
+\section{Problem}
+\begin{frame}[fragile]
+\begin{lstlisting}[
+    language=Java]
+  Public class SimpleMutateGraphComputation extends BasicComputation<
+    LongWritable, DoubleWritable, FloatWritable, DoubleWritable> {
+
+    public void compute(Vertex<LongWritable, DoubleWritable, FloatWritable>
+      vertex, Iterable<DoubleWritable> messages){
+      if (getSuperstep() == 0) {
+        if(vertex.getID() == getVertexCount()-1)
+          removeVertexRequest(getVertexCount());
+        else
+          addEdgeRequest(getVertexCount()-1, vertex.getID());
+      } else if (getSuperstep() == 1) {
+        vertex.voteToHalt();
+    }
+  }
+\end{lstlisting}
+Example of a dangling edge conflict
+\end{frame}
