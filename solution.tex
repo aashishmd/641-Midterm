@@ -9,7 +9,7 @@
   \end{itemize}
   \end{frame}
 
-\begin{frame}{Vertex Inclusion}
+\begin{frame}
 	Conflict in K-cluster
 			\begin{figure}
 			\includegraphics[width=0.6\linewidth]{figures/priority2.png}
@@ -17,8 +17,8 @@
 			\end{figure}
 \end{frame}
 
-\begin{frame}{Vertex addition}
-	Conflict in vertex addition
+\begin{frame}
+	Conflict in dangling edge
 			\begin{figure}
 			\includegraphics[width=0.6\linewidth]{figures/priority1.png}
 			\caption{Solution Using Priority Models}
@@ -26,6 +26,40 @@
 \end{frame}
 
 \subsection{Consistency Models}
+
+\begin{frame}{Consistency Model}
+	 \begin{itemize}
+	 \item Providing a range of consistency models allows a program to choose the level of
+consistency
+	 \item This allows the runtime to optimize the parallel execution while maintaining determinism
+		\item Full Consistency Model
+		 \begin{itemize}
+				 \item Executing compute functions must be at least two vertices apart
+				 \item Limits the potential parallelism
+			 \end{itemize}
+		 \end{itemize}
+	\let\thefootnote\relax\footnotetext{\tiny[Low et. al., "Distributed GraphLab:A Framework for Machine Learning and Data Mining in the Cloud", VLDB, Vol. 5 No 8, 2012.]}
+	 \end{frame}
+
+	 \begin{frame}{Consistency Model}
+	 	 \begin{itemize}
+			 \item Edge Consistency Model
+			 \begin{itemize}
+				 \item Ensures each compute function has exclusive read-write access to its
+vertex and adjacent edges
+				 \item Has read only access to adjacent vertices
+				 \item Increases potential parallelism
+			 \end{itemize}
+					 \item Vertex Consistency Model
+			 \begin{itemize}
+				 \item Ensures each compute function has exclusive write access to its
+vertex and read access to adjacent edges
+				 \item Provides maximum parallelism
+			 \end{itemize}
+		 \end{itemize}
+	\let\thefootnote\relax\footnotetext{\tiny[Low et. al., "Distributed GraphLab:A Framework for Machine Learning and Data Mining in the Cloud", VLDB, Vol. 5 No 8, 2012.]}
+	 \end{frame}
+
 \begin{frame}{K-Clustering}
 	Conflict in k-clustering algorithm
 			\begin{figure}
@@ -75,8 +109,8 @@
 \end{frame}
 
 
-\begin{frame}{Vertex addition}
-	Conflict in vertex addition
+\begin{frame}
+	Conflict in dangling edge
 			\begin{figure}
 			\includegraphics[width=0.6\linewidth]{figures/vnode1.png}
 			\caption{Solution Using Consistency Models}
