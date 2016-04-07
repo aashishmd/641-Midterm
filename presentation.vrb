@@ -6,11 +6,13 @@
     public void compute(Vertex<LongWritable, DoubleWritable, FloatWritable>
       vertex, Iterable<DoubleWritable> messages){
       if (getSuperstep() == 0) {
-      	addVertexRequest(getVertexCount(), new
-      	DoubleWritable(vertex.getValue()));
+        if(vertex.getID() == getVertexCount()-1)
+          removeVertexRequest(getVertexCount);
+        else
+          addEdgeRequest(getVertexCount()-1, vertex.getID());
       } else if (getSuperstep() == 1) {
         vertex.voteToHalt();
     }
   }
 \end{lstlisting}
-Example of a program that mutates a graph
+Example of a dangling edge conflict
