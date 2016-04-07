@@ -7,7 +7,7 @@
       vertex, Iterable<DoubleWritable> messages){
       if (getSuperstep() == 0) {
         if(vertex.getID() == getVertexCount()-1)
-          removeVertexRequest(getVertexCount);
+          removeVertexRequest(getVertexCount());
         else
           addEdgeRequest(getVertexCount()-1, vertex.getID());
       } else if (getSuperstep() == 1) {
